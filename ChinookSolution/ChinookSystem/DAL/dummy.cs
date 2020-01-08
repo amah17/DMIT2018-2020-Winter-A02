@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChinookSystem.Data
+namespace ChinookSystem.DAL
 {
-    public class Class1
+    class dummy
     {
     }
 }
