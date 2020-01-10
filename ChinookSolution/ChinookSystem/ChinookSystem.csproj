@@ -53,12 +53,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\dummy.cs" />
-    <Compile Include="DAL\dummy.cs" />
+    <Compile Include="DAL\ChinookContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChinookSystem.Data\ChinookSystem.Data.csproj">
+      <Project>{e6a816f9-fd04-4ed6-8453-f905931bf1d8}</Project>
+      <Name>ChinookSystem.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
