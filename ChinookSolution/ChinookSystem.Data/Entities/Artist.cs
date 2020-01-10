@@ -41,5 +41,10 @@ namespace ChinookSystem.Data.Entities
                 _Name = string.IsNullOrEmpty(value) ? null : value;
             }
         }
+
+        //[NotMapped] Properties
+
+        //navigational Properties
+        public virtual ICollection<Album> Albums { get; set; }
     }
 }

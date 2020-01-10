@@ -41,5 +41,20 @@ namespace ChinookSystem.Data.Entities
                 _ReleaseLabel = string.IsNullOrEmpty(value) ? null : value;
             }
         }
+
+        //[NotMapped] Properties
+        [NotMapped]
+        public string ReleaseInfo
+        {
+            get
+            {
+                return string.IsNullOrEmpty(_ReleaseLabel) ? ReleaseYear + " (unknown)" : ReleaseYear + " (" + ReleaseLabel + ")";
+            }
+        }
+        
+        //navigational Properties
+        public virtual Artist Artist { get; set; }
+        // Example of connecting Tracks to Album
+        //public virtual ICollection<Track> Tracks { get; set; }
     }
 }
