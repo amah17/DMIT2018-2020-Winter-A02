@@ -11,17 +11,19 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ChinookSystem.Data.Entities
 {
-    [Table("Artist")]
+    //identify the sql entity (table) this class maps
+    [Table("Artists")]
     public class Artist
     {
         private string _Name;
-        // If using the same names as table, then the properties can be in any order.
+
+        //check your sql entity for type of pkey (identity or other)
         [Key]
         public int ArtistId { get; set; }
 
-        // Fully implemented property. MUST DO FOR STRINGS. CLASS STANDARD
-        // Check if the SQL entity attribute has any constraints.
-        [StringLength(120, ErrorMessage ="Artist Name is limited to 120 characters.")]
+        //fully implement nullable strings (course standard)
+        //check if the sql entity attribute has any constraints
+        [StringLength(120, ErrorMessage ="Artist Name is limited to 120 characters")]
         public string Name
         {
             get
@@ -38,13 +40,14 @@ namespace ChinookSystem.Data.Entities
                 //{
                 //    _Name = value;
                 //}
+
                 _Name = string.IsNullOrEmpty(value) ? null : value;
             }
         }
 
-        //[NotMapped] Properties
+        //[NotMapped] properties
 
-        //navigational Properties
+        //navigational properties
         public virtual ICollection<Album> Albums { get; set; }
     }
 }

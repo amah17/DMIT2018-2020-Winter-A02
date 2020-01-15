@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EB32403E-8E3F-44C4-A7CD-951F58BFA57D}</ProjectGuid>
+    <ProjectGuid>{5D8029D1-81BB-40FD-9815-A758A4D1C5E5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ChinookSystem</RootNamespace>
@@ -63,7 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ChinookSystem.Data\ChinookSystem.Data.csproj">
-      <Project>{e6a816f9-fd04-4ed6-8453-f905931bf1d8}</Project>
+      <Project>{655ee71e-5a05-449e-8f60-cb61134feefb}</Project>
       <Name>ChinookSystem.Data</Name>
     </ProjectReference>
   </ItemGroup>
