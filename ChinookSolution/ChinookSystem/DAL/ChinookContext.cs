@@ -1,11 +1,11 @@
+using System;
+using System.Data.Entity;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using ChinookSystem.Data.Entities;
+
 namespace ChinookSystem.DAL
 {
-    using System;
-    using System.Data.Entity;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
-    using ChinookSystem.Data.Entities;
-
     internal partial class ChinookContext : DbContext
     {
         public ChinookContext()
