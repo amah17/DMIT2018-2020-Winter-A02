@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-#region Add Namespaces
+#region Additional Namespace
 using System.Web;
 #endregion
 
@@ -23,4 +23,5 @@ namespace DMIT2018Common.UserControls
             this.RuleDetails = reasons;
         }
     }
+
 }
