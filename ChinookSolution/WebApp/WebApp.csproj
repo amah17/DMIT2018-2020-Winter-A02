@@ -192,6 +192,7 @@
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="SamplePages\ListViewODSCRUD.aspx" />
     <Content Include="SamplePages\ODSReview.aspx" />
+    <Content Include="SamplePages\LinqPadProof.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -377,6 +378,13 @@
     </Compile>
     <Compile Include="SamplePages\ODSReview.aspx.designer.cs">
       <DependentUpon>ODSReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SamplePages\LinqPadProof.aspx.cs">
+      <DependentUpon>LinqPadProof.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SamplePages\LinqPadProof.aspx.designer.cs">
+      <DependentUpon>LinqPadProof.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
