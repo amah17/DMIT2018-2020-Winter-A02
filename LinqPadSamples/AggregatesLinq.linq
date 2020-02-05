@@ -1,6 +1,6 @@
 <Query Kind="Expression">
   <Connection>
-    <ID>bdad34d4-0f70-4045-9b6c-4286dee51bb4</ID>
+    <ID>455c9eac-3497-46b6-9888-54fba6b62429</ID>
     <Persist>true</Persist>
     <Server>.</Server>
     <Database>Chinook</Database>
@@ -114,13 +114,18 @@ select new
 //showing the playlist name, number of tracks for playlist, the cost of the playlist
 //and total storage size for the playlist in megabytes
 
+
+//Playlists				PlaylistTracks			Tracks
+// .Name	    Based on Playlist.Count()		 .UnitPrice, .Bytes
+//			ICollection					Track
+//					Playlists		 Icollection
 from x in Playlists
+where x.PlaylistTracks.Count() > 0
 select new
 {
 	plname = x.Name,
-	pltrackcount = x.PlaylistTracks.Count()
-	
+	pltrackcount = x.PlaylistTracks.Count(),
+	plcost = x.PlaylistTracks.Sum(plt => plt.Track.UnitPrice),					//x.PlaylistTracks points to only the tracks in that singular playlist
+	storage = x.PlaylistTracks.Sum(plt => plt.Track.Bytes/1000000.0)
 }
-
-
 
