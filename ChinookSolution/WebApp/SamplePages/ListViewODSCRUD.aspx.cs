@@ -13,26 +13,27 @@ namespace WebApp.SamplePages
         {
 
         }
+
         protected void SelectCheckForException(object sender, ObjectDataSourceStatusEventArgs e)
         {
             MessageUserControl.HandleDataBoundException(e);
         }
         protected void InsertCheckForException(object sender, ObjectDataSourceStatusEventArgs e)
         {
-            if(e.Exception == null)
+            if (e.Exception == null)
             {
-                MessageUserControl.ShowInfo("Success", "Album has been added");
+                MessageUserControl.ShowInfo("Success", "Album has been added.");
             }
             else
             {
                 MessageUserControl.HandleDataBoundException(e);
-            }            
+            }
         }
         protected void UpdateCheckForException(object sender, ObjectDataSourceStatusEventArgs e)
         {
             if (e.Exception == null)
             {
-                MessageUserControl.ShowInfo("Success", "Album has been updated");
+                MessageUserControl.ShowInfo("Success", "Album has been updated.");
             }
             else
             {
@@ -43,17 +44,12 @@ namespace WebApp.SamplePages
         {
             if (e.Exception == null)
             {
-                MessageUserControl.ShowInfo("Success", "Album has been removed");
+                MessageUserControl.ShowInfo("Success", "Album has been removed.");
             }
             else
             {
                 MessageUserControl.HandleDataBoundException(e);
             }
         }
-
-        protected void AlbumListODS_Deleted(object sender, ObjectDataSourceStatusEventArgs e)
-        {
-
-        }
-    }    
+    }
 }

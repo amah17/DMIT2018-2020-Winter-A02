@@ -69,7 +69,7 @@ namespace ChinookSystem.BLL
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public List<AlbumArtists> AlbumArtists()
+        public List<AlbumArtists> Album_AlbumArtists()
         {
             using (var context = new ChinookContext())
             {

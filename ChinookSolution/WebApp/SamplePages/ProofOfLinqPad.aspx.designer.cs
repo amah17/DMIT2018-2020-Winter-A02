@@ -10,7 +10,7 @@
 namespace WebApp.SamplePages {
     
     
-    public partial class WebForm1 {
+    public partial class ProofOfLinqPad {
         
         /// <summary>
         /// LinqPadQueryList control.
