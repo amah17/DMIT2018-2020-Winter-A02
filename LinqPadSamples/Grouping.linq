@@ -1,6 +1,6 @@
 <Query Kind="Expression">
   <Connection>
-    <ID>bdad34d4-0f70-4045-9b6c-4286dee51bb4</ID>
+    <ID>455c9eac-3497-46b6-9888-54fba6b62429</ID>
     <Persist>true</Persist>
     <Server>.</Server>
     <Database>Chinook</Database>
@@ -147,6 +147,19 @@ select new
 					state = gc.State,
 					city = gc.City,
 					name = gc.LastName + ", " + gc.FirstName
-				}
-			
+				}			
+}
+
+
+//Grouping on multiple attributes not in a class/entity
+//List of Customers
+//Grouped by Country and state
+from c in Customers
+group c by new {c.Country, c.State} into gResidence
+orderby gResidence.Count() descending
+select new
+{
+	country = gResidence.Key.Country,
+	state = gResidence.Key.State,
+	nofcustomers = gResidence.Count()
 }
