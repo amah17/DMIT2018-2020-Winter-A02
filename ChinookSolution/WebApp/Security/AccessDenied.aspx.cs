@@ -5,17 +5,18 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebApp.SamplePages
+namespace WebApp.Security
 {
-    public partial class RepeaterDemo : System.Web.UI.Page
+    public partial class AccessDenied : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-        protected void SelectCheckForException(object sender, ObjectDataSourceStatusEventArgs e)
+
+        protected void GoTo_Click(object sender, EventArgs e)
         {
-            MessageUserControl.HandleDataBoundException(e);
+            Response.Redirect("~/Default.aspx");
         }
     }
 }

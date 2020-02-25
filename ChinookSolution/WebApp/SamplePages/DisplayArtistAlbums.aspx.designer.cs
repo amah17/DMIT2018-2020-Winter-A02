@@ -10,69 +10,51 @@
 namespace WebApp.SamplePages {
     
     
-    public partial class RepeaterDemo {
+    public partial class DisplayArtistAlbums {
         
         /// <summary>
-        /// NumberOfTracks control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NumberOfTracks;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Submit control.
+        /// ArtistName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Submit;
+        protected global::System.Web.UI.WebControls.TextBox ArtistName;
         
         /// <summary>
-        /// RequiredNumberOfTracks control.
+        /// Fetch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredNumberOfTracks;
+        protected global::System.Web.UI.WebControls.Button Fetch;
         
         /// <summary>
-        /// ValidationSummary1 control.
+        /// ArtistAlbumsList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
+        protected global::System.Web.UI.WebControls.GridView ArtistAlbumsList;
         
         /// <summary>
-        /// MessageUserControl control.
+        /// ArtistAlbumsListODS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DMIT2018Common.UserControls.MessageUserControl MessageUserControl;
-        
-        /// <summary>
-        /// ClientPlayListDTO control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater ClientPlayListDTO;
-        
-        /// <summary>
-        /// ClientPlayListDTOODS control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ClientPlayListDTOODS;
+        protected global::System.Web.UI.WebControls.ObjectDataSource ArtistAlbumsListODS;
     }
 }

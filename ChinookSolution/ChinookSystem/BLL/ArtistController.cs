@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 #region Additional Namespaces
-using ChinookSystem.Data.Entities;
+using ChinookSystem.Data.POCOs;
 using ChinookSystem.DAL;
+using ChinookSystem.Data.Entities;
 using System.ComponentModel;
 #endregion
 
@@ -16,26 +16,37 @@ namespace ChinookSystem.BLL
     [DataObject]
     public class ArtistController
     {
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
-        //basic query: complete list of DbSet
+        [DataObjectMethod(DataObjectMethodType.Select,false)]
         public List<Artist> Artist_List()
         {
-            //set up the code block to ensure the release of the sql connection
-            using(var context = new ChinookContext())
+            using (var context = new ChinookContext())
             {
-                //.ToList<T> is used to convert the DbSet<T> into a List<T> collection
                 return context.Artists.ToList();
             }
-
         }
 
-        //basic query: return a recorded based on pkey
-        public Artist Artist_FindByID (int artistid)
+        public Artist Artist_Get(int artistid)
         {
-            using(var context = new ChinookContext())
+            using (var context = new ChinookContext())
             {
                 return context.Artists.Find(artistid);
             }
         }
+
+        //[DataObjectMethod(DataObjectMethodType.Select, false)]
+        //public List<SelectionList> List_ArtistNames()
+        //{
+        //    using (var context = new ChinookContext())
+        //    {
+        //        var results = from x in context.Artists
+        //                      orderby x.Name
+        //                      select new SelectionList
+        //                      {
+        //                          IDValueField = x.ArtistId,
+        //                          DisplayText = x.Name
+        //                      };
+        //        return results.ToList();
+        //    }
+        //}
     }
 }
