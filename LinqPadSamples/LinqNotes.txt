@@ -1,0 +1,5 @@
+Only have to use Group by when I can't use navigational properties.
+Aggregates need to use a delegate. Count is good.
+
+in method syntax .ToString("0.00")
+OR can do string.Format("{0:0.00}", w.e else)S
