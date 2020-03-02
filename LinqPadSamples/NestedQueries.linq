@@ -1,9 +1,10 @@
 <Query Kind="Program">
   <Connection>
-    <ID>455c9eac-3497-46b6-9888-54fba6b62429</ID>
+    <ID>ca15a51e-e65a-4589-a7b0-9452a4f29456</ID>
     <Persist>true</Persist>
     <Server>.</Server>
     <Database>Chinook</Database>
+    <NoPluralization>true</NoPluralization>
   </Connection>
 </Query>
 
@@ -44,7 +45,7 @@ void Main()
 						}).ToList()//Need the name and length of each track
 			};		//Take note, this is ONE c# line. Thus the semi colon is at the end.
 			
-	//results.Dump();	
+	results.Dump();	
 	
 	//Create a list of Playlist with more than 15 tracks.
 	//Show the playlist name, count of tracks, total play time for playlist
@@ -101,6 +102,3 @@ public class ThePlaylist
 	public int PLPlayTime{get;set;}
 	public IEnumerable <PlaylistSong> PlaylistSongs{get;set;}
 }
-
-
-
