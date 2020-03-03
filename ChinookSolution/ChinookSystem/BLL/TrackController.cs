@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 #region Additional Namespaces
 using ChinookSystem.Data.Entities;
-using ChinookSystem.Data.DTOs;
-using ChinookSystem.Data.POCOs;
 using ChinookSystem.DAL;
 using System.ComponentModel;
+using DMIT2018Common.UserControls;
+using ChinookSystem.Data.POCOs;
 #endregion
 
 namespace ChinookSystem.BLL
@@ -17,6 +17,62 @@ namespace ChinookSystem.BLL
     [DataObject]
     public class TrackController
     {
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public List<TrackList> List_TracksForPlaylistSelection(string tracksby, string arg)
+        {
+            using (var context = new ChinookContext())
+            {
+                List<TrackList> results = null;
+                int id = 0;
+                if (int.TryParse(arg, out id))
+                {
+                    //lookup for MediaType or Genre
+                    results = (from x in context.Tracks
+                               where (tracksby.Equals("MediaType") && x.MediaTypeId == id)
+                                 || (tracksby.Equals("Genre") && x.GenreId == id)
+                               orderby x.Name
+                               select new TrackList
+                               {
+                                   TrackID = x.TrackId,
+                                   Name = x.Name,
+                                   Title = x.Album.Title,
+                                   ArtistName = x.Album.Artist.Name,
+                                   MediaName = x.MediaType.Name,
+                                   GenreName = x.Genre.Name,
+                                   Composer = x.Composer,
+                                   Milliseconds = x.Milliseconds,
+                                   Bytes = x.Bytes,
+                                   UnitPrice = x.UnitPrice
+                               }).ToList();
+                }
+                else
+                {
+                    //lookup for artist or album
+                    results = (from x in context.Tracks
+                               where (tracksby.Equals("Artist") && x.Album.Artist.Name.Contains(arg))
+                                 || (tracksby.Equals("Album") && x.Album.Title.Contains(arg))
+                               orderby x.Name
+                               select new TrackList
+                               {
+                                   TrackID = x.TrackId,
+                                   Name = x.Name,
+                                   Title = x.Album.Title,
+                                   ArtistName = x.Album.Artist.Name,
+                                   MediaName = x.MediaType.Name,
+                                   GenreName = x.Genre.Name,
+                                   Composer = x.Composer,
+                                   Milliseconds = x.Milliseconds,
+                                   Bytes = x.Bytes,
+                                   UnitPrice = x.UnitPrice
+                               }).ToList();
+                }
+              
+                        
+
+                return results;
+            }
+        }//eom
+
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public List<Track> Track_List()
         {
@@ -34,7 +90,6 @@ namespace ChinookSystem.BLL
                 return context.Tracks.Find(trackid);
             }
         }
-
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public List<Track> Track_GetByAlbumId(int albumid)
         {
@@ -47,76 +102,5 @@ namespace ChinookSystem.BLL
                 return results.ToList();
             }
         }
-
-        [DataObjectMethod(DataObjectMethodType.Select,false)]
-        public List<TrackList> List_TracksForPlaylistSelection(string tracksby, string arg)
-        {
-            using (var context = new ChinookContext())
-            {
-                //check the incoming parameters and id NEEDED set
-                //to a default value
-                if (string.IsNullOrEmpty(tracksby))
-                {
-                    tracksby = "";
-                }
-                if (string.IsNullOrEmpty(arg))
-                {
-                    arg = "";
-                }
-
-                //create two local variables representing the
-                //argument as a) an integer b) as a string
-                int argid = 0;
-                string argstring = "zyxzz";
-
-                //determine if incoming argument should be integer or string
-                if (tracksby.Equals("Genre") || tracksby.Equals("MediaType"))
-                {
-                    argid = int.Parse(arg);
-                }
-                else
-                {
-                    argstring = arg.Trim();
-                }
-                var results = (from x in context.Tracks
-                               where (x.GenreId == argid &&
-                                     tracksby.Equals("Genre"))
-                                  || (x.MediaTypeId == argid &&
-                                     tracksby.Equals("MediaType"))
-                               select new TrackList
-                               {
-                                   TrackID = x.TrackId,
-                                   Name =x.Name,
-                                   Title = x.Album.Title,
-                                   ArtistName = x.Album.Artist.Name,
-                                   MediaName = x.MediaType.Name,
-                                   GenreName = x.Genre.Name,
-                                   Composer = x.Composer,
-                                   Milliseconds = x.Milliseconds,
-                                   Bytes = x.Bytes,
-                                   UnitPrice = x.UnitPrice,
-                                   dummyDate = DateTime.Now
-                               }).Union(from x in context.Tracks
-                                        where tracksby.Equals("Artist") ? x.Album.Artist.Name.Contains(argstring) :
-                                              tracksby.Equals("Album") ? x.Album.Title.Contains(argstring) : false
-                                        select new TrackList
-                                        {
-                                            TrackID = x.TrackId,
-                                            Name = x.Name,
-                                            Title = x.Album.Title,
-                                            ArtistName = x.Album.Artist.Name,
-                                            MediaName = x.MediaType.Name,
-                                            GenreName = x.Genre.Name,
-                                            Composer = x.Composer,
-                                            Milliseconds = x.Milliseconds,
-                                            Bytes = x.Bytes,
-                                            UnitPrice = x.UnitPrice,
-                                            dummyDate = DateTime.Now
-                                        });
-                return results.ToList();
-            }
-        }//eom
-
-       
-    }//eoc
+    }
 }

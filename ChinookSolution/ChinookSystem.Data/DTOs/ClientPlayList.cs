@@ -10,12 +10,11 @@ using ChinookSystem.Data.POCOs;
 
 namespace ChinookSystem.Data.DTOs
 {
-    public class AlbumDTO
+    public class ClientPlayList
     {
-        public string AlbumTitle { get; set; }
-        public string AlbumArtist { get; set; }
+        public string Name { get; set; }
         public int TrackCount { get; set; }
         public int PlayTime { get; set; }
-        public List<TrackPOCO> AlbumTracks { get; set; }
+        public IEnumerable<PlayListSong> PlaylistSongs { get; set; }
     }
 }
