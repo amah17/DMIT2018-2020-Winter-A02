@@ -7,14 +7,14 @@ using System.Web.UI.WebControls;
 
 namespace WebApp.SamplePages
 {
-    public partial class ListViewCRUDODS : System.Web.UI.Page
+    public partial class ListViewODSCRUD : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-        //in code behind to be called from ODS
-        protected void CheckForException(object sender, ObjectDataSourceStatusEventArgs e)
+
+        protected void SelectCheckForException(object sender, ObjectDataSourceStatusEventArgs e)
         {
             MessageUserControl.HandleDataBoundException(e);
         }
@@ -22,7 +22,7 @@ namespace WebApp.SamplePages
         {
             if (e.Exception == null)
             {
-                MessageUserControl.ShowInfo("Success", "Album added.");
+                MessageUserControl.ShowInfo("Success", "Album has been added.");
             }
             else
             {
@@ -33,7 +33,7 @@ namespace WebApp.SamplePages
         {
             if (e.Exception == null)
             {
-                MessageUserControl.ShowInfo("Success", "Album updated.");
+                MessageUserControl.ShowInfo("Success", "Album has been updated.");
             }
             else
             {
@@ -44,7 +44,7 @@ namespace WebApp.SamplePages
         {
             if (e.Exception == null)
             {
-                MessageUserControl.ShowInfo("Success", "Album removed.");
+                MessageUserControl.ShowInfo("Success", "Album has been removed.");
             }
             else
             {

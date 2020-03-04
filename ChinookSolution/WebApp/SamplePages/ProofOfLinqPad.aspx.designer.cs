@@ -10,24 +10,24 @@
 namespace WebApp.SamplePages {
     
     
-    public partial class RepeaterDisplay {
+    public partial class ProofOfLinqPad {
         
         /// <summary>
-        /// AlbumTracksList control.
+        /// LinqPadQueryList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater AlbumTracksList;
+        protected global::System.Web.UI.WebControls.GridView LinqPadQueryList;
         
         /// <summary>
-        /// AlbumTracksListODS control.
+        /// LinqPadQueryListODS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource AlbumTracksListODS;
+        protected global::System.Web.UI.WebControls.ObjectDataSource LinqPadQueryListODS;
     }
 }

@@ -10,7 +10,7 @@
 namespace WebApp.SamplePages {
     
     
-    public partial class ListViewCRUDODS {
+    public partial class ListViewODSCRUD {
         
         /// <summary>
         /// MessageUserControl control.
@@ -22,22 +22,22 @@ namespace WebApp.SamplePages {
         protected global::DMIT2018Common.UserControls.MessageUserControl MessageUserControl;
         
         /// <summary>
-        /// ValidationSummaryInsert control.
+        /// ValidationSummaryE control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummaryInsert;
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummaryE;
         
         /// <summary>
-        /// ValidationSummaryEdit control.
+        /// ValidationSummaryI control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummaryEdit;
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummaryI;
         
         /// <summary>
         /// AlbumList control.

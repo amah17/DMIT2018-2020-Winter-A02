@@ -7,19 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Jan2018DemoWebsite.SamplePages {
+namespace WebApp.SamplePages {
     
     
     public partial class ManagePlaylist {
-        
-        /// <summary>
-        /// CustomerName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CustomerName;
         
         /// <summary>
         /// MessageUserControl control.
@@ -74,15 +65,6 @@ namespace Jan2018DemoWebsite.SamplePages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList MediaTypeDDL;
-        
-        /// <summary>
-        /// MediaTypeFetch control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button MediaTypeFetch;
         
         /// <summary>
         /// Label3 control.
@@ -146,6 +128,15 @@ namespace Jan2018DemoWebsite.SamplePages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label5;
+        
+        /// <summary>
+        /// QueryPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel QueryPanel;
         
         /// <summary>
         /// TracksBy control.
@@ -256,12 +247,12 @@ namespace Jan2018DemoWebsite.SamplePages {
         protected global::System.Web.UI.WebControls.ObjectDataSource GenreDDLODS;
         
         /// <summary>
-        /// TrackSelectionListODS control.
+        /// TracksSelectionListODS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource TrackSelectionListODS;
+        protected global::System.Web.UI.WebControls.ObjectDataSource TracksSelectionListODS;
     }
 }

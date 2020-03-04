@@ -8,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F71BDD2C-E06C-4453-A9EF-CDB1BE158D00}</ProjectGuid>
+    <ProjectGuid>{987D6973-0E0A-4A6A-94BE-6052E655BBA8}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -190,11 +190,12 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Account\Web.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
-    <Content Include="SamplePages\DisplayArtistAlbums.aspx" />
-    <Content Include="SamplePages\FilterSearchCRUD.aspx" />
-    <Content Include="SamplePages\ListViewCRUDODS.aspx" />
+    <Content Include="SamplePages\AccessingDataSetControls.aspx" />
+    <Content Include="SamplePages\ListViewODSCRUD.aspx" />
     <Content Include="SamplePages\ManagePlaylist.aspx" />
-    <Content Include="SamplePages\RepeaterDisplay.aspx" />
+    <Content Include="SamplePages\ODSReview.aspx" />
+    <Content Include="SamplePages\ProofOfLinqPad.aspx" />
+    <Content Include="SamplePages\RepeaterDemo.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -223,8 +224,6 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
-    <Content Include="Security\AccessDenied.aspx" />
-    <Content Include="Security\SecurityAdmin.aspx" />
     <Content Include="Site.Master" />
     <Content Include="UserControls\MessageUserControl.ascx" />
     <Content Include="ViewSwitcher.ascx" />
@@ -232,7 +231,6 @@
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
     <Content Include="WebConnectionStrings.config" />
-    <Content Include="WebAppSettings.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account\AddPhoneNumber.aspx.cs">
@@ -370,26 +368,19 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SamplePages\DisplayArtistAlbums.aspx.cs">
-      <DependentUpon>DisplayArtistAlbums.aspx</DependentUpon>
+    <Compile Include="SamplePages\AccessingDataSetControls.aspx.cs">
+      <DependentUpon>AccessingDataSetControls.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SamplePages\DisplayArtistAlbums.aspx.designer.cs">
-      <DependentUpon>DisplayArtistAlbums.aspx</DependentUpon>
+    <Compile Include="SamplePages\AccessingDataSetControls.aspx.designer.cs">
+      <DependentUpon>AccessingDataSetControls.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SamplePages\FilterSearchCRUD.aspx.cs">
-      <DependentUpon>FilterSearchCRUD.aspx</DependentUpon>
+    <Compile Include="SamplePages\ListViewODSCRUD.aspx.cs">
+      <DependentUpon>ListViewODSCRUD.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SamplePages\FilterSearchCRUD.aspx.designer.cs">
-      <DependentUpon>FilterSearchCRUD.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="SamplePages\ListViewCRUDODS.aspx.cs">
-      <DependentUpon>ListViewCRUDODS.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SamplePages\ListViewCRUDODS.aspx.designer.cs">
-      <DependentUpon>ListViewCRUDODS.aspx</DependentUpon>
+    <Compile Include="SamplePages\ListViewODSCRUD.aspx.designer.cs">
+      <DependentUpon>ListViewODSCRUD.aspx</DependentUpon>
     </Compile>
     <Compile Include="SamplePages\ManagePlaylist.aspx.cs">
       <DependentUpon>ManagePlaylist.aspx</DependentUpon>
@@ -398,29 +389,27 @@
     <Compile Include="SamplePages\ManagePlaylist.aspx.designer.cs">
       <DependentUpon>ManagePlaylist.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SamplePages\RepeaterDisplay.aspx.cs">
-      <DependentUpon>RepeaterDisplay.aspx</DependentUpon>
+    <Compile Include="SamplePages\ODSReview.aspx.cs">
+      <DependentUpon>ODSReview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SamplePages\RepeaterDisplay.aspx.designer.cs">
-      <DependentUpon>RepeaterDisplay.aspx</DependentUpon>
+    <Compile Include="SamplePages\ODSReview.aspx.designer.cs">
+      <DependentUpon>ODSReview.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Security\AccessDenied.aspx.cs">
-      <DependentUpon>AccessDenied.aspx</DependentUpon>
+    <Compile Include="SamplePages\ProofOfLinqPad.aspx.cs">
+      <DependentUpon>ProofOfLinqPad.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Security\AccessDenied.aspx.designer.cs">
-      <DependentUpon>AccessDenied.aspx</DependentUpon>
+    <Compile Include="SamplePages\ProofOfLinqPad.aspx.designer.cs">
+      <DependentUpon>ProofOfLinqPad.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Security\SecurityAdmin.aspx.cs">
-      <DependentUpon>SecurityAdmin.aspx</DependentUpon>
+    <Compile Include="SamplePages\RepeaterDemo.aspx.cs">
+      <DependentUpon>RepeaterDemo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Security\SecurityAdmin.aspx.designer.cs">
-      <DependentUpon>SecurityAdmin.aspx</DependentUpon>
+    <Compile Include="SamplePages\RepeaterDemo.aspx.designer.cs">
+      <DependentUpon>RepeaterDemo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Security\SecurityController.cs" />
-    <Compile Include="Security\SecurityDbContextInitializer.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -453,7 +442,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="App_Themes\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -468,11 +456,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ChinookSystem.Data\ChinookSystem.Data.csproj">
-      <Project>{5952bd88-d024-460f-b1dd-122f1e9286f1}</Project>
+      <Project>{655ee71e-5a05-449e-8f60-cb61134feefb}</Project>
       <Name>ChinookSystem.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\ChinookSystem\ChinookSystem.csproj">
-      <Project>{4d7749be-581c-4e0a-9776-ddb094130279}</Project>
+      <Project>{5d8029d1-81bb-40fd-9815-a758a4d1c5e5}</Project>
       <Name>ChinookSystem</Name>
     </ProjectReference>
   </ItemGroup>
@@ -489,9 +477,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50979</DevelopmentServerPort>
+          <DevelopmentServerPort>51080</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:44352/</IISUrl>
+          <IISUrl>http://localhost:44366/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

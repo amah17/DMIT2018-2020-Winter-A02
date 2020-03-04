@@ -1,39 +1,37 @@
-﻿<%@ Page Title="OLTP Playlist" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ManagePlaylist.aspx.cs" Inherits="Jan2018DemoWebsite.SamplePages.ManagePlaylist" %>
+﻿<%@ Page Title="OLTP Playlist" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" 
+    CodeBehind="ManagePlaylist.aspx.cs" Inherits="WebApp.SamplePages.ManagePlaylist" %>
 
 <%@ Register Src="~/UserControls/MessageUserControl.ascx" TagPrefix="uc1" TagName="MessageUserControl" %>
 
-
-
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 <div>
-    <h1>Manage Playlists (UI/UX TRX Sample) for
-        <asp:Label ID="CustomerName" runat="server" ></asp:Label>
-    </h1>
+    <h1>Manage Playlists (UI/UX TRX Sample)</h1>
 </div>
     <%--Add MessageUserControl--%>
-    <uc1:MessageUserControl runat="server" id="MessageUserControl" />
-
+    <uc1:MessageUserControl runat="server" ID="MessageUserControl" />
     <div class="row">
     <div class="col-sm-2">
-        <asp:Label ID="Label1" runat="server" Text="Artist" ></asp:Label><br />
-        <asp:TextBox ID="ArtistName" runat="server"
-            Width="150px" placeholder="artist name">
+        <asp:Label ID="Label1" runat="server" Text="Artist" 
+             Font-Bold="true" Font-Size="Larger"></asp:Label><br />
+        <asp:TextBox ID="ArtistName" runat="server" CssClass="form-control"
+             placeholder="artist name"> 
         </asp:TextBox><br />
         <asp:Button ID="ArtistFetch" runat="server" Text="Fetch" OnClick="ArtistFetch_Click"
               />
         <br /><br />
          <asp:Label ID="Label2" runat="server" Text="Media"></asp:Label><br />
         <asp:DropDownList ID="MediaTypeDDL" runat="server"
-            Width="150px" DataSourceID="MediaTypeDDLODS" 
+             CssClass="form-control" DataSourceID="MediaTypeDDLODS" 
             DataTextField="DisplayText" 
-            DataValueField="IDValueField">
+            DataValueField="IDValueField"
+             AppendDataBoundItems="true" AutoPostBack="true" OnSelectedIndexChanged="MediaTypeDDL_SelectedIndexChanged">
+            <asp:ListItem Value="0">select ...</asp:ListItem>
         </asp:DropDownList><br />
-        <asp:Button ID="MediaTypeFetch" runat="server" 
-            Text="Fetch" OnClick="MediaTypeFetch_Click"  />
+        
         <br /><br />
          <asp:Label ID="Label3" runat="server" Text="Genre"></asp:Label><br />
         <asp:DropDownList ID="GenreDDL" runat="server"
-            Width="150px" DataSourceID="GenreDDLODS" 
+             CssClass="form-control" DataSourceID="GenreDDLODS" 
             DataTextField="DisplayText" 
             DataValueField="IDValueField">
         </asp:DropDownList><br />
@@ -41,8 +39,8 @@
             />
         <br /><br />
          <asp:Label ID="Label4" runat="server" Text="Album"></asp:Label><br />
-        <asp:TextBox ID="AlbumTitle" runat="server"
-            Width="150px" placeholder="album title">
+        <asp:TextBox ID="AlbumTitle" runat="server" ToolTip="Enter an partial album title"
+             CssClass="form-control" placeholder="album title">
         </asp:TextBox><br />
         <asp:Button ID="AlbumFetch" runat="server" Text="Fetch" OnClick="AlbumFetch_Click"
              />
@@ -50,12 +48,14 @@
     </div>
     <div class="col-sm-10">
         <asp:Label ID="Label5" runat="server" Text="Tracks"></asp:Label>&nbsp;&nbsp;
-        <asp:Label ID="TracksBy" runat="server" ></asp:Label>&nbsp;&nbsp;
-        <asp:Label ID="SearchArg" runat="server" ></asp:Label><br />
+        <asp:Panel ID="QueryPanel" runat="server" Visible="false">
+            <asp:Label ID="TracksBy" runat="server" ></asp:Label>&nbsp;&nbsp;
+            <asp:Label ID="SearchArg" runat="server" ></asp:Label>
+        </asp:Panel>
+      <%-- <br />--%>
         <asp:ListView ID="TracksSelectionList" runat="server"
-            DataSourceID="TrackSelectionListODS"
             OnItemCommand="TracksSelectionList_ItemCommand"
-             >
+            DataSourceID="TracksSelectionListODS">
             <AlternatingItemTemplate>
                 <tr style="background-color: #FFFFFF; color: #284775;">
                     <td>
@@ -83,8 +83,6 @@
                             runat="server" ID="BytesLabel" /></td>
                     <td>
                         <asp:Label Text='<%# Eval("UnitPrice") %>' runat="server" ID="UnitPriceLabel" /></td>
-                    <td>
-                        <asp:Label Text='<%# string.Format("{0:h tt}",Eval("dummyDate")) %>' runat="server" ID="time" /></td>
                 </tr>
             </AlternatingItemTemplate>
            
@@ -122,8 +120,6 @@
                         <asp:Label Text='<%#string.Format("{0:0.00}",(int)Eval("Bytes") / 1000000m) %>' runat="server" ID="BytesLabel" /></td>
                     <td>
                         <asp:Label Text='<%# Eval("UnitPrice") %>' runat="server" ID="UnitPriceLabel" /></td>
-                    <td>
-                        <asp:Label Text='<%# string.Format("{0:h tt}",Eval("dummyDate")) %>' runat="server" ID="time" /></td>
                 </tr>
             </ItemTemplate>
             <LayoutTemplate>
@@ -142,14 +138,13 @@
                                     <th runat="server">Msec</th>
                                     <th runat="server">(MB)</th>
                                     <th runat="server">UnitPrice</th>
-                                    <th runat="server">Time</th>
                                 </tr>
                                 <tr runat="server" id="itemPlaceholder"></tr>
                             </table>
                         </td>
                     </tr>
                     <tr runat="server">
-                        <td runat="server" style="text-align: center; background-color: #5D7B9D; font-family: Verdana, Arial, Helvetica, sans-serif; color: #FFFFFF">
+                        <td runat="server" style="text-align: center; background-color: #C0C0C0; font-family: Verdana, Arial, Helvetica, sans-serif; color: #FFFFFF">
                             <asp:DataPager runat="server" ID="DataPager1" PageSize="5" PagedControlID="TracksSelectionList">
                                 <Fields>
                                     <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False"></asp:NextPreviousPagerField>
@@ -205,7 +200,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Name">
                     <ItemTemplate>
-                        <asp:Label runat="server" ID="TrackName"
+                        <asp:Label runat="server" ID="TrachName"
                             Text='<%# Eval("TrackName") %>'></asp:Label>
                           &nbsp;&nbsp;
                     </ItemTemplate>
@@ -248,18 +243,18 @@
          >
     </asp:ObjectDataSource>
    
-    <asp:ObjectDataSource ID="TrackSelectionListODS" runat="server" 
+    <asp:ObjectDataSource ID="TracksSelectionListODS" runat="server" 
         OldValuesParameterFormatString="original_{0}" 
         SelectMethod="List_TracksForPlaylistSelection" 
         TypeName="ChinookSystem.BLL.TrackController"
          OnSelected="CheckForException">
         <SelectParameters>
             <asp:ControlParameter ControlID="TracksBy" 
-                PropertyName="Text" Name="tracksby" Type="String">
-            </asp:ControlParameter>
+                PropertyName="Text" DefaultValue="xcvdfg" 
+                Name="tracksby" Type="String"></asp:ControlParameter>
             <asp:ControlParameter ControlID="SearchArg" 
-                PropertyName="Text" Name="arg" Type="String">
-            </asp:ControlParameter>
+                PropertyName="Text" DefaultValue="cnvbj" 
+                Name="arg" Type="String"></asp:ControlParameter>
         </SelectParameters>
     </asp:ObjectDataSource>
 

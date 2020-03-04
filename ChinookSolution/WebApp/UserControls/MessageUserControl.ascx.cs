@@ -83,7 +83,7 @@ namespace DMIT2018Common.UserControls
                 ex = ex.InnerException;
             if (ex is DbEntityValidationException)
             {
-                HandleException(ex as DbEntityValidationException);
+                HandleException(e.Exception as DbEntityValidationException);
                 e.ExceptionHandled = true;
             }
             else if (ex is BusinessRuleException)
