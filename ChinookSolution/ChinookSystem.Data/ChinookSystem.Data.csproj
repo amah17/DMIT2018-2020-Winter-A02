@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{655EE71E-5A05-449E-8F60-CB61134FEEFB}</ProjectGuid>
+    <ProjectGuid>{5952BD88-D024-460F-B1DD-122F1E9286F1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ChinookSystem.Data</RootNamespace>
@@ -50,8 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTOs\ClientPlayList.cs" />
-    <Compile Include="DTOs\dummy.cs" />
+    <Compile Include="DTOs\AlbumDTO.cs" />
     <Compile Include="Entities\Album.cs" />
     <Compile Include="Entities\Artist.cs" />
     <Compile Include="Entities\Customer.cs" />
@@ -63,15 +62,17 @@
     <Compile Include="Entities\Playlist.cs" />
     <Compile Include="Entities\PlaylistTrack.cs" />
     <Compile Include="Entities\Track.cs" />
-    <Compile Include="POCOs\AlbumArtists.cs" />
-    <Compile Include="POCOs\PlayListSong.cs" />
+    <Compile Include="POCOs\AlbumsOfArtist.cs" />
     <Compile Include="POCOs\SelectionList.cs" />
     <Compile Include="POCOs\TrackList.cs" />
+    <Compile Include="POCOs\TrackPOCO.cs" />
     <Compile Include="POCOs\UserPlaylistTrack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

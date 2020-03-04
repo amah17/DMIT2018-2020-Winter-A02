@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApp.SamplePages {
+namespace WebApp.Security {
     
     
-    public partial class AccessingDataSetControls {
+    public partial class SecurityAdmin {
         
         /// <summary>
         /// MessageUserControl control.
@@ -22,93 +22,120 @@ namespace WebApp.SamplePages {
         protected global::DMIT2018Common.UserControls.MessageUserControl MessageUserControl;
         
         /// <summary>
-        /// ControlPanel control.
+        /// UsersListView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel ControlPanel;
+        protected global::System.Web.UI.WebControls.ListView UsersListView;
         
         /// <summary>
-        /// TracksBy control.
+        /// RolesListView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TracksBy;
+        protected global::System.Web.UI.WebControls.ListView RolesListView;
         
         /// <summary>
-        /// AlbumList control.
+        /// EmployeeListForRoles control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList AlbumList;
+        protected global::System.Web.UI.WebControls.DropDownList EmployeeListForRoles;
         
         /// <summary>
-        /// Fetch control.
+        /// RefreshAssignEmployees control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Fetch;
+        protected global::System.Web.UI.WebControls.LinkButton RefreshAssignEmployees;
         
         /// <summary>
-        /// TrackListGV control.
+        /// RoleList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView TrackListGV;
+        protected global::System.Web.UI.WebControls.DropDownList RoleList;
         
         /// <summary>
-        /// WalkThroughGV control.
+        /// RefreshAssignRoles control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton WalkThroughGV;
+        protected global::System.Web.UI.WebControls.LinkButton RefreshAssignRoles;
         
         /// <summary>
-        /// TrackListLV control.
+        /// AddRole control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView TrackListLV;
+        protected global::System.Web.UI.WebControls.Button AddRole;
         
         /// <summary>
-        /// WalkThroughLV control.
+        /// DeleteRole control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton WalkThroughLV;
+        protected global::System.Web.UI.WebControls.Button DeleteRole;
         
         /// <summary>
-        /// TracksDataODS control.
+        /// UsersDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource TracksDataODS;
+        protected global::System.Web.UI.WebControls.ObjectDataSource UsersDataSource;
         
         /// <summary>
-        /// AlbumListODS control.
+        /// RolesDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource AlbumListODS;
+        protected global::System.Web.UI.WebControls.ObjectDataSource RolesDataSource;
+        
+        /// <summary>
+        /// EmployeeListODS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource EmployeeListODS;
+        
+        /// <summary>
+        /// EmployeeListForRolesODS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource EmployeeListForRolesODS;
+        
+        /// <summary>
+        /// RoleListForRolesODS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource RoleListForRolesODS;
     }
 }

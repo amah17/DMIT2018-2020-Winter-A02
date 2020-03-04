@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %></title>
+    <title><%: Page.Title %> - My ASP.NET Application</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -45,14 +45,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Chinook Samples</a>
+                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
                 </div>
                 <div class="navbar-collapse collapse">
                    <%-- <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
-                        <li><a runat="server" href="~/SamplePages/ODSReview">ODS Review</a></li>
                     </ul>--%>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
@@ -70,30 +69,41 @@
                             </ul>
                         </LoggedInTemplate>
                     </asp:LoginView>
-                    <%-- AddContentTemplate this Menu control --%>
-                
-	                <asp:Menu ID="navMenu" runat="server" 
-                    BackColor="#000000" BorderColor="Red"
-                    StaticMenuItemStyle-ForeColor="#999999" 
-                    StaticMenuItemStyle-VerticalPadding="15px"
-                    StaticMenuItemStyle-HorizontalPadding="10px"
-                    RenderingMode="List" Orientation="Horizontal" 
-                    DynamicMenuItemStyle-ForeColor="#999999" 
-                    DynamicMenuStyle-BackColor="Black">
-                    <Items>
-                        <asp:MenuItem Text="Home" NavigateUrl="~/"></asp:MenuItem>
-
-                        <asp:MenuItem Text="Samples" Value="Samples">
-                            <asp:MenuItem Text="ODS Review" NavigateUrl="~/SamplePages/ODSReview.aspx"></asp:MenuItem>
-                            <asp:MenuItem Text="ODS CRUD" NavigateUrl="~/SamplePages/ListViewODSCRUD.aspx"></asp:MenuItem>
-                            <asp:MenuItem Text="LinqPad Proof" NavigateUrl="~/SamplePages/ProofOfLinqPad.aspx"></asp:MenuItem>
-                            <asp:MenuItem Text="Repeater Demo of DTO" NavigateUrl="~/SamplePages/RepeaterDemo.aspx"></asp:MenuItem>
-                             <asp:MenuItem Text="Demo of OLTP" NavigateUrl="~/SamplePages/ManagePlaylist.aspx"></asp:MenuItem>
-                        </asp:MenuItem>
-
-                        <asp:MenuItem Text="About Us" NavigateUrl="~/About.aspx"></asp:MenuItem>
-                        <asp:MenuItem Text="Contact Us" NavigateUrl="~/Contact.aspx"></asp:MenuItem>
-                    </Items>
+                    <asp:Menu ID="navMenu" runat="server"
+                         BackColor="#222222" BorderColor="Red"
+                         StaticMenuItemStyle-ForeColor="#999999"
+                         StaticMenuItemStyle-VerticalPadding="10px"
+                         StaticMenuItemStyle-HorizontalPadding="10px"
+                         RenderingMode="List" Orientation="Horizontal"
+                         DynamicMenuItemStyle-ForeColor="#999999"
+                         DynamicMenuItemStyle-BackColor="#222222">
+                        <Items>
+                            <asp:MenuItem Text="Home"
+                                 NavigateUrl="~/Default.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="About"
+                                 NavigateUrl="~/About.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Contact"
+                                 NavigateUrl="~/Contact.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Security"
+                                 NavigateUrl="~/Security/SecurityAdmin.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Samples" Value="Samples">
+                                <asp:MenuItem Text="Review CRUD"
+                                     NavigateUrl="~/SamplePages/FilterSearchCRUD.aspx">
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="ListView CRUD using ODS"
+                                     NavigateUrl="~/SamplePages/ListViewCRUDODS.aspx">
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="LinqPad to WebApp"
+                                     NavigateUrl="~/SamplePages/DisplayArtistAlbums.aspx">
+                                </asp:MenuItem>
+                                 <asp:MenuItem Text="Repeater Display"
+                                     NavigateUrl="~/SamplePages/RepeaterDisplay.aspx">
+                                </asp:MenuItem>
+                                 <asp:MenuItem Text="OLTP"
+                                     NavigateUrl="~/SamplePages/ManagePlaylist.aspx">
+                                </asp:MenuItem>
+                            </asp:MenuItem>
+                        </Items>
                     </asp:Menu>
                 </div>
             </div>
@@ -103,7 +113,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> DMIT2018 Nait Demostration project Section A02</p>
+                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
             </footer>
         </div>
     </form>

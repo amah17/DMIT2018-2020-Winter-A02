@@ -16,7 +16,7 @@ namespace ChinookSystem.Data.Entities
 
         public int ArtistId { get; set; }
 
-        [StringLength(120)]
+        [StringLength(120,ErrorMessage ="Artist name is limited to 120 characters.")]
         public string Name { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

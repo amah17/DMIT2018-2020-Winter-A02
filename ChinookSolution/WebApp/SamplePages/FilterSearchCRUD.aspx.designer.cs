@@ -7,19 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Jan2018DemoWebsite.SamplePages {
+namespace WebApp.SamplePages {
     
     
-    public partial class ManagePlaylist {
-        
-        /// <summary>
-        /// CustomerName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CustomerName;
+    public partial class FilterSearchCRUD {
         
         /// <summary>
         /// MessageUserControl control.
@@ -31,237 +22,210 @@ namespace Jan2018DemoWebsite.SamplePages {
         protected global::DMIT2018Common.UserControls.MessageUserControl MessageUserControl;
         
         /// <summary>
-        /// Label1 control.
+        /// RequiredFieldEditTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldEditTitle;
         
         /// <summary>
-        /// ArtistName control.
+        /// RequiredFieldEditReleaseYear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ArtistName;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldEditReleaseYear;
         
         /// <summary>
-        /// ArtistFetch control.
+        /// RangeEditReleaseYear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ArtistFetch;
+        protected global::System.Web.UI.WebControls.RangeValidator RangeEditReleaseYear;
         
         /// <summary>
-        /// Label2 control.
+        /// ValidationSummary1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
         
         /// <summary>
-        /// MediaTypeDDL control.
+        /// label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList MediaTypeDDL;
+        protected global::System.Web.UI.WebControls.Label label1;
         
         /// <summary>
-        /// MediaTypeFetch control.
+        /// ArtistList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button MediaTypeFetch;
+        protected global::System.Web.UI.WebControls.DropDownList ArtistList;
         
         /// <summary>
-        /// Label3 control.
+        /// FetchAlbums control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.LinkButton FetchAlbums;
         
         /// <summary>
-        /// GenreDDL control.
+        /// AlbumList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList GenreDDL;
+        protected global::System.Web.UI.WebControls.GridView AlbumList;
         
         /// <summary>
-        /// GenreFetch control.
+        /// label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button GenreFetch;
+        protected global::System.Web.UI.WebControls.Label label2;
         
         /// <summary>
-        /// Label4 control.
+        /// EditAlbumID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.Label EditAlbumID;
         
         /// <summary>
-        /// AlbumTitle control.
+        /// label3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AlbumTitle;
+        protected global::System.Web.UI.WebControls.Label label3;
         
         /// <summary>
-        /// AlbumFetch control.
+        /// EditTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AlbumFetch;
+        protected global::System.Web.UI.WebControls.TextBox EditTitle;
         
         /// <summary>
-        /// Label5 control.
+        /// label4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Label label4;
         
         /// <summary>
-        /// TracksBy control.
+        /// EditAlbumArtistList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TracksBy;
+        protected global::System.Web.UI.WebControls.DropDownList EditAlbumArtistList;
         
         /// <summary>
-        /// SearchArg control.
+        /// label5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label SearchArg;
+        protected global::System.Web.UI.WebControls.Label label5;
         
         /// <summary>
-        /// TracksSelectionList control.
+        /// EditReleaseYear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView TracksSelectionList;
+        protected global::System.Web.UI.WebControls.TextBox EditReleaseYear;
         
         /// <summary>
-        /// Label6 control.
+        /// label6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
+        protected global::System.Web.UI.WebControls.Label label6;
         
         /// <summary>
-        /// PlaylistName control.
+        /// EditReleaseLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PlaylistName;
+        protected global::System.Web.UI.WebControls.TextBox EditReleaseLabel;
         
         /// <summary>
-        /// PlayListFetch control.
+        /// Add control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button PlayListFetch;
+        protected global::System.Web.UI.WebControls.LinkButton Add;
         
         /// <summary>
-        /// MoveUp control.
+        /// Update control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton MoveUp;
+        protected global::System.Web.UI.WebControls.LinkButton Update;
         
         /// <summary>
-        /// MoveDown control.
+        /// Remove control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton MoveDown;
+        protected global::System.Web.UI.WebControls.LinkButton Remove;
         
         /// <summary>
-        /// DeleteTrack control.
+        /// AlbumListODS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton DeleteTrack;
+        protected global::System.Web.UI.WebControls.ObjectDataSource AlbumListODS;
         
         /// <summary>
-        /// PlayList control.
+        /// EditArtistListODS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView PlayList;
-        
-        /// <summary>
-        /// MediaTypeDDLODS control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource MediaTypeDDLODS;
-        
-        /// <summary>
-        /// GenreDDLODS control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource GenreDDLODS;
-        
-        /// <summary>
-        /// TrackSelectionListODS control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource TrackSelectionListODS;
+        protected global::System.Web.UI.WebControls.ObjectDataSource EditArtistListODS;
     }
 }
