@@ -86,15 +86,14 @@ namespace ChinookSystem.BLL
 
                     if(newtrack == null)
                     {
-
+                        //Adding the new track
                     }
                     else
                     {
-
+                        //Throw 
                     }
 
-                }
-             
+                }             
             }
         }//eom
         public void MoveTrack(string username, string playlistname, int trackid, int tracknumber, string direction)
