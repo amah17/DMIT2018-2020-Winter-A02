@@ -79,7 +79,28 @@ namespace WebApp.SamplePages
 
         protected void PlayListFetch_Click(object sender, EventArgs e)
         {
-            //code to go here
+            //Security is yet to be implemented. 
+            //This page needs to know the username of the currently logged in user. 
+            //Temp, we will hardcode the username
+            string username = "HansenB";
+            if (string.IsNullOrEmpty(PlaylistName.Text))
+            {
+                MessageUserControl.ShowInfo("Entry Error", "Enter a playlist name.");
+            }
+            else
+            {
+                //Your code does NOT need to have a try/catch
+                //The try/catch is embedded within MessageUserControl
+                //The syntax for executing with MessageUserControl
+                //  MessageUserControl.Tryrun(() => { coding block }, "Success Title", "Success Message");
+                MessageUserControl.TryRun(() =>
+                {
+                    PlaylistTracksController sysmgr = new PlaylistTracksController();
+                    List<UserPlaylistTrack> info = sysmgr.List_TracksForPlaylist(PlaylistName.Text, username);
+                    PlayList.DataSource = info;
+                    PlayList.DataBind();
+                }, "Playlist", "View Current Tracks on Playlist");
+            }
  
         }
 
