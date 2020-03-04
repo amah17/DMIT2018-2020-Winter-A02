@@ -41,8 +41,59 @@ namespace ChinookSystem.BLL
         {
             using (var context = new ChinookContext())
             {
-                //code to go here
+                //Transaction(TRX)
+                //Query the Playlist table to see if the playlist name exists for the user
+                //If not
+                //      Create instance of Playlist
+                //      Load
+                //      Add
+                //      Set trackNumber to 1
+                //if yes
+                //      Query Playlist track for trackID
+                //      If found
+                //              Throw an error
+                //      If not found
+                //              Query Playlist for max tracknumber, then increment++
+                //              Create an instance of PlayListTrack
+                //              Load
+                //              Add
+                //              Save Changes
+                int tracknumber = 0;
+                PlaylistTrack newtrack = null;
+                Playlist exists = (from x in context.Playlists
+                                  where x.Name.Equals(playlistname)
+                                  && x.UserName.Equals(username)
+                                  select x).FirstOrDefault();
                 
+                if (exists == null)
+                {
+                    //new playlist
+                    exists = new Playlist();
+                    exists.Name = playlistname;
+                    exists.UserName = username;
+                    context.Playlists.Add(exists);
+                    tracknumber = 1;
+                }
+                else
+                {
+                    //existing playlist
+                    //This basically will make newtrack be null if there is NO instance of that track id in the playlist.
+                    newtrack = (from x in context.PlaylistTracks
+                                where x.Playlist.Name.Equals(playlistname)
+                                && x.Playlist.UserName.Equals(username)
+                                && x.TrackId == trackid
+                                select x).FirstOrDefault();
+
+                    if(newtrack == null)
+                    {
+
+                    }
+                    else
+                    {
+
+                    }
+
+                }
              
             }
         }//eom

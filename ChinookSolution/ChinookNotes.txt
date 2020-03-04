@@ -1,1 +1,3 @@
 on the listview. OnItemCommand="TrackSelectionList_ItemCommand"
+
+.FirstOrDefault matches the first value of a sequence. If there is no record, it returns NULL
