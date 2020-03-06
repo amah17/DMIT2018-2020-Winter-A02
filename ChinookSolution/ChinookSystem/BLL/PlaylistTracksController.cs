@@ -86,11 +86,11 @@ namespace ChinookSystem.BLL
 
                     if(newtrack == null)
                     {
-                        //Adding the new track
+                        //Adding the new track to the playlist.
                     }
                     else
                     {
-                        //Throw 
+                        //Track on playlist. Throw.
                     }
 
                 }             
