@@ -215,8 +215,8 @@ namespace ChinookSystem.BLL
                         //Transaction
                         context.Entry(moveTrack).Property("TrackNumber").IsModified = true;
                         context.Entry(otherTrack).Property("TrackNumber").IsModified = true;
+                        context.SaveChanges();
                     }
-
                 }
             }
         }//eom
