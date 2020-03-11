@@ -1,3 +1,8 @@
 on the listview. OnItemCommand="TrackSelectionList_ItemCommand"
 
 .FirstOrDefault matches the first value of a sequence. If there is no record, it returns NULL
+
+The oltp page transactions
+1. add playlist. has two parts, required insert of adding a song and an optional one of creating a new playlist.
+2. Move a song up or down on a playlist. Change track numbers accordingly
+3. Delete song(s) and then change the tracknumbers accordingly.
