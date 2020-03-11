@@ -225,10 +225,48 @@ namespace ChinookSystem.BLL
         public void DeleteTracks(string username, string playlistname, List<int> trackstodelete)
         {
             using (var context = new ChinookContext())
-            {
-               //code to go here
+            {                
+                var exists = (from x in context.Playlists
+                              where x.UserName.Equals(username)
+                              && x.Name.Equals(playlistname)
+                              select x).FirstOrDefault();
+                if (exists == null)
+                {
+                    throw new Exception("Play list has been removed from the system.");
+                }
+                else
+                {
+                    //find the songs to keep
+                    var trackstkept = exists.PlaylistTracks
+                                            .Where(tr => !trackstodelete.Any(tod => tod == tr.TrackId))
+                                            .OrderBy(tr => tr.TrackNumber)
+                                            .Select(tr => tr);
 
+                    //Remove tracks to delete.
+                    PlaylistTrack item = null;
+                    //make a list of tracks to delete
+                    foreach(var dtrackid in trackstodelete)
+                    {
+                        item = exists.PlaylistTracks
+                                        .Where(tr => tr.TrackId == dtrackid)
+                                        .Select(tr => tr)
+                                        .FirstOrDefault();
+                        if (item != null)
+                        {
+                            exists.PlaylistTracks.Remove(item);
+                        }
+                    }
 
+                    //Resequence the kept tracks
+                    int number = 1;
+                    foreach(var tKept in trackstkept)
+                    {
+                        tKept.TrackNumber = number;
+                        context.Entry(tKept).Property("TrackNumber").IsModified = true;
+                        number++;
+                    }
+                    context.SaveChanges();
+                }
             }
         }//eom
     }
